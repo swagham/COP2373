@@ -1,0 +1,36 @@
+Meghan Farrell
+06/23/2024
+Program Description
+This program allows the user to input any number of sentences, including those that begin with numbers. It stores each sentence in a list and stops accepting input when the user types "END". The program then displays all the entered sentences and the total count of sentences.
+Variables
+1. sentences: A list that stores the sentences entered by the user.
+2. sentence: A string that temporarily holds the current sentence input by the user.
+Functions
+1. main()
+o Description: Manages the input of sentences, stores them, and then displays the sentences and their count.
+o Arguments: None
+o Returns: None
+o Operations:
+* Initialize an empty list sentences
+* Print a message to the user to start entering sentences
+* Loop to accept user input:
+* Prompt the user to enter a sentence and store it in sentence
+* If sentence is "END", break the loop (lookahead-like check)
+* Append sentence to the sentences list
+* Print a message displaying all entered sentences
+* Loop through the sentences list and print each sentence
+* Print the total number of sentences
+Pseudocode
+1. main()
+o Initialize an empty list sentences
+o Print a message to the user to start entering sentences
+o Loop to accept user input:
+* Prompt the user to enter a sentence and store it in sentence
+* If sentence is "END", break the loop
+* Append sentence to the sentences list
+o Print a message displaying all entered sentences
+o Loop through the sentences list and print each sentence
+o Print the total number of sentences
+2. Execution
+o Call the main() function to run the program
+Repository: https://github.com/swagham/COP2373.git
