@@ -1,0 +1,66 @@
+Program Description
+This program validates user inputs for phone numbers, social security numbers, and zip codes using regular expressions. The validation ensures that the inputs adhere to specific formats. The main function collects input from the user, applies the validation functions, and displays whether each input is valid or invalid.
+
+Variables
+phone_number: A string representing the phone number input by the user.
+ssn: A string representing the social security number input by the user.
+zip_code: A string representing the zip code input by the user.
+Functions
+validate_phone_number(phone_number):
+- Description: Validates the phone number format.
+- Arguments:
+1. phone_number (str): The phone number to validate.
+- Returns: bool - True if the phone number is valid, False otherwise.
+- Regex Pattern: ^\(\d{3}\) \d{3}-\d{4}$
+
+validate_ssn(ssn):
+- Description: Validates the social security number format.
+- Arguments:
+1. ssn (str): The social security number to validate.
+- Returns: bool - True if the SSN is valid, False otherwise.
+- Regex Pattern: ^\d{3}-\d{2}-\d{4}$
+
+validate_zip_code(zip_code):
+- Description: Validates the zip code format.
+- Arguments:
+1. zip_code (str): The zip code to validate.
+- Returns: bool - True if the zip code is valid, False otherwise.
+- Regex Pattern: ^\d{5}(-\d{4})?$
+main()
+
+- Description: Collects user input and validates the phone number, social security number, and zip code.
+- Arguments: None.
+- Returns: None.
+- Operations:
+1. Collect user input for phone number, SSN, and zip code.
+2. Validate each input using the corresponding validation function.
+3. Print whether each input is valid or invalid.
+Logical Steps (Pseudocode)
+1. validate_phone_number(phone_number)
+o Define a regex pattern for phone number: ^\(\d{3}\) \d{3}-\d{4}$
+o Check if the phone number matches the pattern
+o Return True if it matches, False otherwise
+2. validate_ssn(ssn)
+o Define a regex pattern for SSN: ^\d{3}-\d{2}-\d{4}$
+o Check if the SSN matches the pattern
+o Return True if it matches, False otherwise
+3. validate_zip_code(zip_code)
+Define a regex pattern for zip code: ^\d{5}(-\d{4})?$
+o Check if the zip code matches the pattern
+o Return True if it matches, False otherwise
+4. main()
+o Prompt the user to enter a phone number and store the input in phone_number
+o Prompt the user to enter a social security number and store the input in ssn
+o Prompt the user to enter a zip code and store the input in zip_code
+o Validate the phone number using validate_phone_number(phone_number)
+* If valid, print "Phone number is valid."
+* If invalid, print "Phone number is invalid."
+o Validate the SSN using validate_ssn(ssn)
+* If valid, print "Social security number is valid."
+* If invalid, print "Social security number is invalid."
+o Validate the zip code using validate_zip_code(zip_code)
+* If valid, print "Zip code is valid."
+* If invalid, print "Zip code is invalid."
+5. Execution
+o Call the main() function to run the program
+Repository: https://github.com/swagham/COP2373.git
