@@ -1,0 +1,62 @@
+Meghan Farrell
+07/06/2024
+Program Description:
+The BankAcct class models a bank account, supporting basic banking operations like depositing and withdrawing money, adjusting interest rates, and calculating accrued interest over a specified period. This class helps simulate real-world bank account transactions and manage account details effectively.
+Variables:
+* name (str): The name of the account holder.
+* account_number (str): The unique identifier for the bank account.
+* amount (float): The current balance in the account.
+* interest_rate (float): The annual interest rate for the account.
+Functions:
+* __init__(self, name, account_number, amount, interest_rate): Initializes a new instance of the BankAcct class with the provided name, account number, initial amount, and interest rate.
+* adjust_interest_rate(self, new_rate): Adjusts the interest rate to a new value.
+o Parameters: new_rate (float): The new interest rate.
+* deposit(self, amount): Deposits a specified amount into the account.
+o Parameters: amount (float): The amount to deposit.
+* withdraw(self, amount): Withdraws a specified amount from the account.
+o Parameters: amount (float): The amount to withdraw.
+* get_balance(self): Returns the current balance of the account.
+o Returns: float: The current balance.
+* calculate_interest(self, days): Calculates the interest accrued over a specified number of days.
+o Parameters: days (int): The number of days to calculate interest for.
+o Returns: float: The interest accrued.
+* __str__(self): Returns a string representation of the account's details, including the name, account number, balance, and interest rate.
+o Returns: str: The string representation of the account details.
+Pseudocode:
+BankAcct Class:
+1. init(self, name, account_number, amount, interest_rate):
+o Set self.name to name
+o Set self.account_number to account_number
+o Set self.amount to amount
+o Set self.interest_rate to interest_rate
+2. adjust_interest_rate(self, new_rate):
+o Set self.interest_rate to new_rate
+3. deposit(self, amount):
+o If amount is greater than 0:
+* Increase self.amount by amount
+o Else:
+* Raise a ValueError with the message "Deposit amount must be positive"
+4. withdraw(self, amount):
+o If amount is greater than 0 and amount is less than or equal to self.amount:
+* Decrease self.amount by amount
+o Else:
+* Raise a ValueError with the message "Invalid withdrawal amount"
+5. get_balance(self):
+o Return self.amount
+6. calculate_interest(self, days):
+o Calculate interest as self.amount multiplied by (self.interest_rate divided by 100) multiplied by (days divided by 365)
+o Return the calculated interest
+7. str(self):
+o Return a string representation of the account details
+Test Function (test_bank_acct):
+1. Create an instance of BankAcct with name "John Doe", account number "123456789", amount 1000.0, and interest rate 5.0
+2. Print the account details
+3. Deposit 500.0 into the account
+4. Print the updated balance
+5. Withdraw 300.0 from the account
+6. Print the updated balance
+7. Adjust the interest rate to 4.5
+8. Print the updated balance
+9. Calculate interest for 30 days
+10. Print the calculated interest
+Repository: https://github.com/swagham/COP2373.git
