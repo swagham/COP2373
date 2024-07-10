@@ -1,0 +1,90 @@
+Meghan Farrell
+07/10/2024
+Program Description
+The program defines a BankAcct class that inherits from the Money class, allowing for precise monetary operations. The BankAcct class includes methods for depositing and withdrawing money, adjusting interest rates, getting the account balance, and calculating interest. A test function verifies the functionality of these operations.
+Variables
+* total_cents: decimal.Decimal - stores the total amount of money in cents.
+* name: str - stores the account holder's name.
+* account_number: str - stores the bank account number.
+* interest_rate: float - stores the annual interest rate as a percentage.
+Functions
+* Money.init(self, dollars=0, cents=0): Initializes the Money object with given dollars and cents.
+* Money.dollars(self): Property that returns the dollar part of the total cents.
+* Money.cents(self): Property that returns the cent part of the total cents.
+* Money.add(self, other): Adds two Money objects.
+* Money.sub(self, other): Subtracts one Money object from another.
+* Money.mul(self, other): Multiplies a Money object by an integer or float.
+* Money.str(self): Returns the string representation of the Money object.
+* BankAcct.init(self, name, account_number, dollars=0, cents=0, interest_rate=0.0): Initializes the BankAcct object with account details.
+* BankAcct.adjust_interest_rate(self, new_rate): Adjusts the interest rate for the account.
+* BankAcct.deposit(self, amount): Deposits an amount into the account.
+* BankAcct.withdraw(self, amount): Withdraws an amount from the account.
+* BankAcct.get_balance(self): Returns the current balance of the account.
+* BankAcct.calculate_interest(self, days): Calculates the interest for a given number of days.
+* BankAcct.str(self): Returns the string representation of the account details.
+* test_bank_acct(): Function to test the operations of the BankAcct class.
+Pseudocode
+1. Import Decimal from decimal
+
+2. Define class Money
+* Method __init__(self, dollars=0, cents=0)
+- Convert dollars to cents and add to total cents
+- Store total cents in self.total_cents as Decimal
+* Property dollars(self)
+- Calculate and return the dollar part (self.total_cents // 100)
+* Property cents(self)
+- Calculate and return the cent part (self.total_cents % 100)
+* Method __add__(self, other)
+- If other is instance of Money
+o Return new Money with sum of self.total_cents and other.total_cents
+- Else raise TypeError
+* Method __sub__(self, other)
+- If other is instance of Money
+o Return new Money with difference of self.total_cents and other.total_cents
+- Else raise TypeError
+* Method __mul__(self, other)
+- If other is int or float
+o Return new Money with product of self.total_cents and other, rounded down to nearest cent
+- Else raise TypeError
+* Method __str__(self)
+- Return string in format $dollars.cents
+
+3. Define class BankAcct inheriting from Money
+* Method __init__(self, name, account_number, dollars=0, cents=0, interest_rate=0.0)
+- Initialize parent Money class with dollars and cents
+- Set self.name, self.account_number, and self.interest_rate
+* Method adjust_interest_rate(self, new_rate)
+- Set self.interest_rate to new_rate
+* Method deposit(self, amount)
+- If amount.total_cents > 0
+o Add amount.total_cents to self.total_cents
+- Else raise ValueError
+* Method withdraw(self, amount)
+- If amount.total_cents > 0 and amount.total_cents <= self.total_cents
+o Subtract amount.total_cents from self.total_cents
+- Else raise ValueError
+* Method get_balance(self)
+- Return Money object with self.total_cents
+* Method calculate_interest(self, days)
+- Calculate interest_amount based on self.total_cents, self.interest_rate, and days
+- Return Money object with interest_amount
+* Method __str__(self)
+- Return formatted string with account details
+
+4. Define function test_bank_acct()
+* Create BankAcct object account with details
+* Print account details
+* Create Money object deposit_amount with $5.00
+* Call account.deposit(deposit_amount)
+* Print updated balance
+* Create Money object withdraw_amount with $3.00
+* Call account.withdraw(withdraw_amount)
+* Print updated balance
+* Call account.adjust_interest_rate(4.5)
+* Print updated balance
+* Calculate interest for 30 days and print
+
+5. Execute test function
+   - Call test_bank_acct()
+
+Repository: https://github.com/swagham/COP2373.git
