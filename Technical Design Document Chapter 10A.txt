@@ -1,0 +1,59 @@
+Meghan Farrell
+07/10/2024
+Program Description:
+The program defines a Money class that uses decimal.Decimal for precise arithmetic operations on monetary values. The class allows addition, subtraction, and multiplication operations. A test function verifies the functionality of these operations.
+Variables:
+* total_cents: decimal.Decimal - stores the total amount of money in cents.
+* dollars: decimal.Decimal (property) - returns the dollar part of the money.
+* cents: decimal.Decimal (property) - returns the cent part of the money.
+Functions:
+* Money.init(self, dollars=0, cents=0): Initializes the Money object with given dollars and cents.
+* Money.dollars(self): Property that returns the dollar part of the total cents.
+* Money.cents(self): Property that returns the cent part of the total cents.
+* Money.add(self, other): Adds two Money objects.
+* Money.sub(self, other): Subtracts one Money object from another.
+* Money.mul(self, other): Multiplies a Money object by an integer or float.
+* Money.str(self): Returns the string representation of the Money object.
+* test_money_operations(): Function to test the operations of the Money class.
+Pseudocode:
+1. Import Decimal from decimal
+
+2. Define class Money
+* 2.1 Method __init__(self, dollars=0, cents=0)
+o Convert dollars to cents and add to total cents
+o Store total cents in self.total_cents as Decimal
+   2.2 Property dollars(self)
+* Calculate and return the dollar part (self.total_cents // 100)
+   2.3 Property cents(self)
+* Calculate and return the cent part (self.total_cents % 100)
+   2.4 Method __add__(self, other)
+* If other is instance of Money
+o Return new Money with sum of self.total_cents and other.total_cents
+* Else raise TypeError
+   2.5 Method __sub__(self, other)
+* If other is instance of Money
+o Return new Money with difference of self.total_cents and other.total_cents
+* Else raise TypeError
+   2.6 Method __mul__(self, other)
+* If other is int or float
+o Return new Money with product of self.total_cents and other, rounded down to nearest cent
+* Else raise TypeError
+   2.7 Method __str__(self)
+* Return string in format $dollars.cents
+
+3. Define function test_money_operations()
+* Create Money object m1 with $10.25
+* Create Money object m2 with $5.50
+* Addition
+o Add m1 and m2 to get m3
+o Print result of addition
+* Subtraction
+o Subtract m2 from m1 to get m4
+o Print result of subtraction
+* Multiplication
+o Multiply m1 by 2 to get m5
+o Print result of multiplication
+
+4. Execute test function
+* Call test_money_operations()
+Repository: https://github.com/swagham/COP2373.git
