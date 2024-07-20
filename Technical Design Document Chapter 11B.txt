@@ -1,0 +1,31 @@
+Meghan Farrell
+07/20/2024
+Program Description
+The program calculates the length of the hypotenuse of a right triangle given the nearest angle (measured in degrees) and the length of the adjacent side. The calculation uses functions from the math module. The program prompts the user for the angle and adjacent side length, performs the calculation, and outputs the hypotenuse length.
+Variables
+* nearest_angle: float - stores the nearest angle in degrees.
+* adjacent_side: float - stores the length of the adjacent side of the triangle.
+* angle_radians: float - stores the nearest angle converted to radians.
+* hypotenuse: float - stores the calculated length of the hypotenuse.
+Functions
+* calculate_hypotenuse():
+o Prompts the user for the nearest angle and the length of the adjacent side.
+o Converts the angle from degrees to radians.
+o Calculates the hypotenuse using the cosine function.
+o Prints the length of the hypotenuse.
+Pseudocode
+1. Import math module
+2. Define function calculate_hypotenuse()
+o Prompt user to input the nearest angle in degrees
+* nearest_angle = float(input("Enter the nearest angle in degrees: "))
+o Prompt user to input the length of the adjacent side
+* adjacent_side = float(input("Enter the length of the adjacent side: "))
+o Convert nearest angle from degrees to radians
+* angle_radians = math.radians(nearest_angle)
+o Calculate the hypotenuse using the cosine function
+* hypotenuse = adjacent_side / math.cos(angle_radians)
+o Print the length of the hypotenuse
+* print(f"The length of the hypotenuse is: {hypotenuse:.2f}")
+3. Execute the function
+o Call calculate_hypotenuse()
+
