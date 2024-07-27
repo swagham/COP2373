@@ -1,0 +1,114 @@
+Program Description
+This program reads student exam grades from a CSV file, processes the data to calculate various statistics, and determines the pass/fail status of students for each exam. The program utilizes the numpy and pandas libraries for efficient data manipulation and statistical analysis.
+Variables
+* filename: A string that stores the name of the CSV file containing the student grades. Default is 'grades.csv'.
+* data: A numpy array that stores the data read from the CSV file.
+* df: A pandas DataFrame that stores the data read from the CSV file for easier manipulation.
+* exam_columns: A list of strings representing the column names for the exams in the DataFrame.
+* stats: A dictionary to store the statistical measures (Mean, Median, Std Dev, Min, Max) for each exam.
+* pass_fail_counts: A dictionary to store the count of students who passed and failed for each exam.
+* overall_stats: A dictionary to store the overall statistical measures for all exams combined.
+Functions
+read_csv_to_numpy(filename='grades.csv')
+Reads data from a CSV file and converts it into a numpy array and a pandas DataFrame.
+* Parameters:
+o filename (str): The name of the CSV file to read.
+* Returns:
+o data (numpy array): The data read from the CSV file as a numpy array.
+o df (pandas DataFrame): The data read from the CSV file as a pandas DataFrame.
+Steps of the Code
+1. Import necessary libraries:
+python
+Copy code
+import csv
+import numpy as np
+import pandas as pd
+2. Define the function read_csv_to_numpy:
+o Reads the CSV file using pandas.
+o Converts the DataFrame to a numpy array and returns both the numpy array and the DataFrame.
+python
+Copy code
+def read_csv_to_numpy(filename='grades.csv'):
+    df = pd.read_csv(filename)
+    return df.to_numpy(), df
+3. Read the CSV file and convert to numpy array:
+o Call read_csv_to_numpy to get the data and DataFrame.
+python
+Copy code
+data, df = read_csv_to_numpy()
+4. Print the first few rows of the dataset:
+o Use the head method of the DataFrame to print the first few rows.
+python
+Copy code
+print("First few rows of the dataset:")
+print(df.head())
+5. Calculate and print statistics for each exam:
+o Iterate over the exam columns and calculate the Mean, Median, Std Dev, Min, and Max for each exam.
+o Store the results in the stats dictionary.
+o Print the statistics for each exam.
+python
+Copy code
+exam_columns = ["Exam 1", "Exam 2", "Exam 3"]
+stats = {}
+
+for exam in exam_columns:
+    exam_data = df[exam]
+    stats[exam] = {
+        "Mean": np.mean(exam_data),
+        "Median": np.median(exam_data),
+        "Std Dev": np.std(exam_data),
+        "Min": np.min(exam_data),
+        "Max": np.max(exam_data)
+    }
+
+for exam, stat in stats.items():
+    print(f"\nStatistics for {exam}:")
+    for key, value in stat.items():
+        print(f"{key}: {value:.2f}")
+6. Calculate and print overall statistics for all exams combined:
+o Flatten the DataFrame to get all exam scores in a single array.
+o Calculate the overall Mean, Median, Std Dev, Min, and Max.
+o Store the results in the overall_stats dictionary.
+o Print the overall statistics.
+python
+Copy code
+all_exam_data = df[exam_columns].to_numpy().flatten()
+
+overall_stats = {
+    "Mean": np.mean(all_exam_data),
+    "Median": np.median(all_exam_data),
+    "Std Dev": np.std(all_exam_data),
+    "Min": np.min(all_exam_data),
+    "Max": np.max(all_exam_data)
+}
+
+print("\nOverall statistics for all exams combined:")
+for key, value in overall_stats.items():
+    print(f"{key}: {value:.2f}")
+7. Determine and print the number of students who passed and failed each exam:
+o Iterate over the exam columns and count the number of students who passed (grade >= 60) and failed (grade < 60).
+o Store the results in the pass_fail_counts dictionary.
+o Print the pass/fail counts for each exam.
+python
+Copy code
+pass_fail_counts = {}
+
+for exam in exam_columns:
+    exam_data = df[exam]
+    passed = np.sum(exam_data >= 60)
+    failed = np.sum(exam_data < 60)
+    pass_fail_counts[exam] = {
+        "Passed": passed,
+        "Failed": failed
+    }
+
+for exam, counts in pass_fail_counts.items():
+    print(f"\nPass/Fail counts for {exam}:")
+    print(f"Passed: {counts['Passed']}")
+    print(f"Failed: {counts['Failed']}")
+8. Calculate and print the overall pass percentage across all exams:
+9. ?  Calculate the total number of students and total exams.
+?  Count the total number of passes.
+?  Calculate the overall pass percentage.
+?  Print the overall pass percentage.
+Repository: https://github.com/swagham/COP2373.git

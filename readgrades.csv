@@ -1,0 +1,20 @@
+import csv
+
+def read_csv():
+    with open('grades.csv', mode='r') as file:
+        reader = csv.DictReader(file)
+        data = [row for row in reader]
+    return data
+
+def display_data(data):
+    print(f"{'First Name':<15}{'Last Name':<15}{'Exam 1':<10}{'Exam 2':<10}{'Exam 3':<10}")
+    print("-" * 60)
+    for row in data:
+        print(f"{row['First Name']:<15}{row['Last Name']:<15}{row['Exam 1']:<10}{row['Exam 2']:<10}{row['Exam 3']:<10}")
+
+def main():
+    data = read_csv()
+    display_data(data)
+
+if __name__ == "__main__":
+    main()
