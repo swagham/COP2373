@@ -1,0 +1,31 @@
+Meghan Farrell
+07/28/2024
+Program Description
+This program creates a SQLite database named population_MF with a table population containing population data for 10 cities in Florida. It initializes the table with population data for the year 2023, simulates population growth over the next 20 years at a 2% annual growth rate, and allows users to visualize the population growth for a selected city using Matplotlib.
+Variables
+* cities: A list of tuples containing initial population data for 10 cities in Florida for the year 2023.
+* selected_city: A string representing the city chosen by the user for visualizing population growth.
+* years: A list of integers representing the years for which population data is available.
+* populations: A list of integers representing the population data corresponding to the years.
+Functions
+1. create_database()
+o Description: Creates the SQLite database population_MF.db and the population table.
+2. insert_initial_data()
+o Description: Inserts initial population data for 10 cities in Florida for the year 2023 into the population table.
+3. simulate_population_growth()
+o Description: Simulates population growth over the next 20 years at a 2% annual growth rate and inserts this data into the population table.
+4. display_population_growth()
+o Description: Prompts the user to select a city from a list, retrieves population data for the selected city from the database, and displays the population growth using Matplotlib.
+Steps of the Program
+1. Create the Database and Table:
+o Call the create_database() function to create the SQLite database population_MF.db and the population table.
+2. Insert Initial Data:
+o Call the insert_initial_data() function to insert initial population data for 10 cities in Florida for the year 2023 into the population table.
+3. Simulate Population Growth:
+o Call the simulate_population_growth() function to simulate population growth over the next 20 years at a 2% annual growth rate and insert this data into the population table.
+4. Display Population Growth:
+o Call the display_population_growth() function to:
+* Print a list of 10 cities in Florida and prompt the user to select a city.
+* Retrieve the population data for the selected city from the population table.
+* Use Matplotlib to display the population growth for the selected city.
+Repository: https://github.com/swagham/COP2373.git
